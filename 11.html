@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div class="service-main">
+			<form>
+				<div class="row">
+					<div class="col-xs-4 form-group">
+						<label class="control-label col-xs-5">发布渠道：</label>
+						<div class="col-xs-7">
+							<select class="form-control">
+								<option value="0">网站</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-xs-4 form-group">
+						<label class="control-label col-xs-5">广告位：</label>
+						<div class="col-xs-7">
+							<select id="advertType" name="advertType" class="form-control">
+								<option value="0">首页区广告</option>
+								<!-- <option value="saab">Saab</option>
+						<option value="opel">Opel</option>
+						<option value="audi">Audi</option> -->
+							</select>
+						</div>
+					</div>
+					<div class="col-xs-4 form-group">
+						<label class=" control-label col-xs-5">广告名称：</label>
+						<div class="col-xs-7">
+							<input type="text" name="shortTitle" id="shortTitle" placeholder="最多输入25个汉字" value="${advertBean.shortTitle }" onkeyup="checkLen(this,25)" class="form-control" />
+						</div>
+					</div>
+					<div class="col-xs-4 form-group">
+						<label class="control-label col-xs-5">是否变更图片:</label>
+						<div class=" col-xs-7">
+							<select name="isChange" id="isChange" class="form-control" onchange="changeImage()">
+								<option value="2">否</option>
+								<option value="1">是</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-xs-4 form-group">
+						<label class="control-label col-xs-5">链接地址:</label>
+						<div class="col-xs-7">
+							<input type="text" name="pathUrl" id="pathUrl" value="${advertBean.pathUrl }" class="form-control" onblur="javascript:chkurl();">
+						</div>
+					</div>
+				</div>
+
+				<div class="clearfix" style="margin-bottom:10px;display:none;" id="imageDiv">
+					<label class="control-label"><span style="color:red;" >✻</span>广告图片:</label>
+					<div class=" pd-right" style="">
+						<input name="fileName" id="fileName" type="file" class="form-control" accept=".jpg,.jpeg,.bmp,.gif,.png" onchange="fileChange(this);" />
+					</div>
+				</div>
+
+				<div class="row">
+					<!-- <div class="col-xs-4 form-group clearfix">
+				<label class=" control-label">上传图片：</label>
+				<div class="pd-right">
+					<input name="fileName" id="fileName" type="file" class="form-control" accept=".jpg,.jpeg,.bmp,.gif,.png" onchange="fileChange(this);" />
+			    </div>
+		  	 </div> -->
+
+				</div>
+				<div class="row">
+					<div class="col-xs-2 form-group">
+						<label class="control-label col-xs-12">广告详情：</label>
+					</div>
+					<div class="col-xs-7 form-group">
+						<textarea class="form-control" name="areaTitle" id="areaTitle" placeholder="最多输入100个汉字" onkeyup="checkLen(this,100)" cols="56" rows="4">${advertBean.areaTitle }</textarea>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<input class="btn-col2 declar-btn" onclick="addAdvert();" type="submit" value="提交" />
+				</div>
+			</form>
+		</div>
+	</body>
+
+</html>
