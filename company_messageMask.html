@@ -39,27 +39,27 @@
 				<div class="col-xs-6 form-group">
 					<label class="col-xs-4 control-label">地区：</label>
 					<div class="col-xs-8">
-						<select class="form-control">
-							<option value="volvo">南京市</option>
-							<option value="saab">苏州市</option>
-							<option value="opel">无锡市</option>
-							<option value="audi">常州市</option>
-							<option value="audi">镇江市</option>
-							<option value="audi">扬州市</option>
-							<option value="audi">盐城市</option>
-							<option value="audi">淮安市</option>
-							<option value="audi">宿迁市</option>
-							<option value="audi">连云港市</option>
-							<option value="audi">徐州市</option>
-							<option value="audi">南通市</option>
-							<option value="audi">泰州市</option>
+						<select class="form-control" id="shi">
+							<option value="0">南京市</option>
+							<option value="1">苏州市</option>
+							<option value="2">无锡市</option>
+							<option value="3">常州市</option>
+							<option value="4">镇江市</option>
+							<option value="5">扬州市</option>
+							<option value="6">盐城市</option>
+							<option value="7">淮安市</option>
+							<option value="8">宿迁市</option>
+							<option value="9">连云港市</option>
+							<option value="10">徐州市</option>
+							<option value="11">南通市</option>
+							<option value="12">泰州市</option>
 						</select>
 					</div>
 				</div>
 				<div class="col-xs-6 form-group">
 					<label class="col-xs-4 control-label">区县：</label>
 					<div class="col-xs-8">
-						<select class="form-control">
+						<select class="form-control" id="quxian">
 							<option value="volvo">Volvo</option>
 							<option value="saab">Saab</option>
 							<option value="opel">Opel</option>
@@ -209,6 +209,31 @@
 		<div class="modal-footer">
 			<input class="btn-col2 declar-btn" type="button" value="提交" />
 		</div>
+		
+		<script type="text/javascript">
+			var quxian = [
+				['玄武区', "玄武区1", "玄武区2"],
+				['姑苏区','姑苏区1', '姑苏区2']
+			]
+			
+			document.getElementById("shi").onchange = function () {
+				var index = this.value;
+				var html = "";
+				var arr = quxian[index];
+				
+				for (var i = 0, len = arr.length; i < len; i++) {
+					html += "<option>" + arr[i] + "</option>";
+				}
+				
+				document.getElementById("quxian").innerHTML = html;
+			}
+			
+			var html = "";
+			for (var i = 0, len = quxian[0].length; i < len; i++) {
+				html += "<option>" + quxian[0][i] + "</option>";
+			}
+			document.getElementById("quxian").innerHTML = html;
+		</script>
 	</body>
 
 </html>
