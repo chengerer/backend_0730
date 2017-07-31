@@ -211,13 +211,17 @@
 		</div>
 		
 		<script type="text/javascript">
-			var quxian = [
-				['玄武区', "玄武区1", "玄武区2"],
-				['姑苏区','姑苏区1', '姑苏区2']
-			]
 			
-			document.getElementById("shi").onchange = function () {
-				var index = this.value;
+			
+			function showArea ( index ) {
+				index = index || 0;
+				
+				var quxian = [
+					['玄武区', "玄武区1", "玄武区2"],
+					['姑苏区','姑苏区1', '姑苏区2'],
+					['崇安区','新区','北塘区','惠山区']
+				];
+				
 				var html = "";
 				var arr = quxian[index];
 				
@@ -228,11 +232,14 @@
 				document.getElementById("quxian").innerHTML = html;
 			}
 			
-			var html = "";
-			for (var i = 0, len = quxian[0].length; i < len; i++) {
-				html += "<option>" + quxian[0][i] + "</option>";
+			document.getElementById("shi").onchange = function () {
+				var index = this.value;
+				
+				showArea( index );
 			}
-			document.getElementById("quxian").innerHTML = html;
+			
+			showArea();
+			
 		</script>
 	</body>
 
