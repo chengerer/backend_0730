@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/style.min862f.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" />
+		<title></title>
+		<style>
+			.service-main {
+				padding: 15px;
+			}
+			
+			.service-main .control-label {
+				float: left;
+				line-height: 34px;
+			}
+			
+			.service-main .pd-right {
+				width: 145px;
+				margin: 0;
+			}
+			
+			.declar-btn {
+				background: rgb(91, 204, 231);
+				border: 0;
+				border-radius: 10px;
+				line-height: 50px;
+				width: 70px;
+				color: white;
+				font-size: 16px;
+				font-weight: 700;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="row service-main">
+			<form class="form-horizontal">
+				<div class="col-xs-6 form-group">
+					<label class="col-xs-4 control-label">套餐名称：</label>
+					<div class="col-xs-8">
+						<input type="text" class="form-control" value="" />
+					</div>
+				</div>
+				<div class="col-xs-6 form-group">
+					<label class="col-xs-4 control-label">套餐类型：</label>
+					<div class="col-xs-8">
+						<select class="form-control">
+							<option value="volvo">Volvo</option>
+							<option value="saab">Saab</option>
+							<option value="opel">Opel</option>
+							<option value="audi">Audi</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-xs-6 form-group">
+					<label class="col-xs-4 control-label">套餐价格：</label>
+					<div class="col-xs-8">
+						<input type="text" class="form-control" value="" />
+					</div>
+				</div>
+				<div class="col-xs-6 form-group">
+					<label class="col-xs-4 control-label">上传图片：</label>
+					<div class="col-xs-8">
+						<input type="file" value="" />
+					</div>
+				</div>
+				<div class="col-xs-6 form-group">
+					<label class="col-xs-4 control-label">上线时间：</label>
+					<div class="col-xs-8">
+						<div class="input-group date" id="datetimepicker">
+							<input type="text" class="form-control">
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-th"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<input class="btn-col2 declar-btn" type="button" value="提交" />
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			$(function() {
+				$('#datetimepicker').datepicker({
+					format: "yyyy/mm/dd",
+					language: "zh-CN",
+					calendarWeeks: true,
+					autoclose: true,
+					todayHighlight: true
+				});
+			});
+		</script>
+
+	</body>
+
+</html>
