@@ -8,7 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="renderer" content="webkit">
 		<meta http-equiv="Cache-Control" content="no-siteapp" />
-		<title>信用评价</title>
+		<title>基本信息</title>
 		<meta name="keywords">
 		<meta name="description">
 
@@ -17,12 +17,12 @@
     <![endif]-->
 
 		<link rel="shortcut icon" href="favicon.ico">
-		<link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
-		<link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+		<link href="css/bootstrap.min14ed.css" rel="stylesheet">
+		<link href="css/font-awesome.min93e3.css" rel="stylesheet">
 		<link href="css/animate.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/palmshop1.css" />
 		<link rel="stylesheet" type="text/css" href="css/background.css" />
-		<link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+		<link href="css/style.min862f.css" rel="stylesheet">
 	</head>
 
 	<body class="fixed-sidebar full-height-layout gray-bg">
@@ -30,12 +30,11 @@
 		<div class="col-xs-11">
 			<div class="layui-tab-item">
 				<button class="btn btn-col2 btn1" onclick="addInfo()" type="button">新增</button>
-				<button class="btn btn-col2 btn2" type="button">编辑</button>
+				<button class="btn btn-col2 btn2" type="button">修改</button>
 				<button class="btn btn-col2" type="button">删除</button>
-				<button class="btn btn-col2" type="button">上线</button>
-				<button class="btn btn-col2" type="button">下线</button>
+				<button class="btn btn-col2" type="button">导入</button>
 				<div class="shop-right1">
-					<p class="news-p">信息记录查询</p>
+					<p class="news-p">信息筛选</p>
 					<div class="row service-main">
 						<form class="form-horizontal">
 							<div class="col-xs-4 form-group">
@@ -45,7 +44,7 @@
 								</div>
 							</div>
 							<div class="col-xs-4 form-group">
-								<label class="col-xs-4 control-label">风险状态：</label>
+								<label class="col-xs-4 control-label">单位门类：</label>
 								<div class="col-xs-8">
 									<select class="form-control">
 										<option value="volvo">Volvo</option>
@@ -56,7 +55,7 @@
 								</div>
 							</div>
 							<div class="col-xs-4 form-group">
-								<label class="col-xs-4 control-label">生产状态：</label>
+								<label class="col-xs-4 control-label">单位大类：</label>
 								<div class="col-xs-8">
 									<select class="form-control">
 										<option value="volvo">Volvo</option>
@@ -67,7 +66,7 @@
 								</div>
 							</div>
 							<div class="col-xs-4 form-group">
-								<label class="col-xs-4 control-label">税收状态：</label>
+								<label class="col-xs-4 control-label">电压等级：</label>
 								<div class="col-xs-8">
 									<select class="form-control">
 										<option value="volvo">Volvo</option>
@@ -78,7 +77,7 @@
 								</div>
 							</div>
 							<div class="col-xs-4 form-group">
-								<label class="col-xs-4 control-label">电费欠交：</label>
+								<label class="col-xs-4 control-label">渠道商：</label>
 								<div class="col-xs-8">
 									<select class="form-control">
 										<option value="volvo">Volvo</option>
@@ -97,19 +96,32 @@
 				</div>
 				<!--月度电量调整-->
 				<div class="shop-right1">
-					<p class="news-p">信用记录信息</p>
-					<table class="table table-bordered">
+					<p class="news-p">信息筛选</p>
+					<table class="table table-bordered overflow-x">
 						<thead>
 							<tr>
 								<th><input type="checkbox" class="checkAll" value="" /></th>
-								<th>代码</th>
 								<th>企业名称</th>
-								<th>风险状态</th>
-								<th>生产状态</th>
-								<th>税收欠交</th>
-								<th>电费欠交</th>
-								<th>信用评分</th>
-								<th>评估意见</th>
+								<th>省市</th>
+								<th>地市</th>
+								<th>区县</th>
+								<th>单位门类</th>
+								<th>单位大类</th>
+								<th>公司名称</th>
+								<th>单位地址</th>
+								<th>法定代表人姓名</th>
+								<th>总户号</th>
+								<th>电压等级(KV)</th>
+								<th>年用电量(万KWA)</th>
+								<th>双电源</th>
+								<th>重要用户</th>
+								<th>电器负责人姓名</th>
+								<th>电器负责人移动电话</th>
+								<th>电器负责人邮箱</th>
+								<th>运行值班负责人姓名</th>
+								<th>运行值班负责人移动电话</th>
+								<th>运行值班负责人邮箱</th>
+								<th>渠道商</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -123,64 +135,11 @@
 								<td></td>
 								<td></td>
 								<td></td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" name="" id="" value="" /></td>
 								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" name="" id="" value="" /></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" name="" id="" value="" /></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" name="" id="" value="" /></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" name="" id="" value="" /></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" name="" id="" value="" /></td>
 								<td></td>
 								<td></td>
 								<td></td>
@@ -237,14 +196,14 @@
 			function addInfo() {
 				layer.open({
 					type: 2,
-					title: '信用评价新增',
+					title: '基本信息新增',
 					skin: 'demo-class',
 					maxmin: true,
 					shade: [0.3, '#393D49'],
 					shadeClose: false,
 					id: '1',
-					area: ['970px', '500px'],
-					content: 'member_Credit.html'
+					area: ['1050px', '500px'],
+					content: 'user_messageMask.html'
 				});
 			}
 		</script>

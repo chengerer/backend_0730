@@ -1,5 +1,3 @@
-
-
 .wrapper {
 	padding-left: 10px;
 	padding-right: 10px;
@@ -8,13 +6,16 @@
 	margin-right: auto;
 	margin-left: auto;
 }
+
 .flex-wrapper {
 	display: -webkit-flex;
 	display: flex;
 }
+
 .nav-md {
 	background: #fff;
 }
+
 .profile {
 	text-align: center;
 }
@@ -22,6 +23,7 @@
 .menu_section {
 	margin-bottom: 0 !important;
 }
+
 .serviceAll {
 	flex: 1;
 }
@@ -30,47 +32,62 @@
 	text-align: center;
 	padding: 15px 0;
 }
+
 .wr1 {
 	margin-top: 15px;
 }
+
 .paging-cen {
 	text-align: center;
 }
+
 .btn-col2 {
 	margin-top: 10px;
 }
+
 .add {
 	margin-left: 90px;
 }
 
+
 /*新增*/
+
 .service1 {
 	padding-left: 16px;
 	margin-left: -8px;
 }
+
 .ll {
 	padding-left: 5px;
 }
+
+
 /*新增01*/
+
 .modal-footer {
 	margin-top: 26px;
 }
+
 .glyphicon-asterisk {
 	color: red;
 	font-size: 12px;
 	margin-right: 3px;
 }
+
 .selects {
 	height: 30px;
 	width: 200px;
 	text-align: center;
 }
+
 .declar-txt {
 	width: 200px;
 }
+
 .ch_init {
 	margin-left: 14px;
 }
+
 .modal-dialog {
 	height: 350px;
 	position: absolute;
@@ -81,9 +98,11 @@
 	margin: auto;
 	width: 1000px;
 }
+
 .addlf {
 	margin-left: 10px;
 }
+
 .wr {
 	margin-top: 30px;
 }
@@ -91,20 +110,44 @@
 .news-p {
 	font-size: 16px;
 }
+
 .add1 {
 	margin-left: 0 !important;
 }
+
 .fl {
 	float: left;
 }
+
 .layui-layer-title {
 	font-size: 16px;
 }
-
 
 .overflow-x {
 	display: block;
 	overflow-x: scroll;
 	overflow-y: hidden;
 	white-space: nowrap;
+}
+
+
+
+.into-padd {
+	padding-right: 100px;
+}
+
+.declar-btn1 {
+	background: rgb(91, 204, 231);
+	border: 0;
+	border-radius: 10px;
+	line-height: 40px;
+	width: 70px;
+	color: white;
+	font-size: 16px;
+	font-weight: 700;
+	margin-top: 55px;
+}
+
+.modal-footer {
+	text-align: center;
 }
