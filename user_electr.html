@@ -8,7 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="renderer" content="webkit">
 		<meta http-equiv="Cache-Control" content="no-siteapp" />
-		<title>渠道商基本信息</title>
+		<title>用电电价</title>
 		<meta name="keywords">
 		<meta name="description">
 
@@ -34,11 +34,25 @@
 				<button class="btn btn-col2" type="button">删除</button>
 				<button class="btn btn-col2" type="button">导入</button>
 				<div class="shop-right1">
-					<p class="news-p">基本信息查询</p>
+					<p class="news-p">用电电价查询</p>
 					<div class="row service-main">
 						<form class="form-horizontal">
 							<div class="col-xs-4 form-group">
 								<label class="col-xs-4 control-label">企业名称：</label>
+								<div class="col-xs-8">
+									<input type="text" class="form-control" value="" />
+								</div>
+							</div>
+							<div class="col-xs-4 form-group">
+								<label class="col-xs-4 control-label">用电分类：</label>
+								<div class="col-xs-8">
+									<select class="form-control">
+										<option value="volvo">请选择</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-xs-4 form-group">
+								<label class="col-xs-4 control-label">合同功率因数：</label>
 								<div class="col-xs-8">
 									<input type="text" class="form-control" value="" />
 								</div>
@@ -52,34 +66,40 @@
 				</div>
 				<!--月度电量调整-->
 				<div class="shop-right1">
-					<p class="news-p">基本信息</p>
-					<table class="table table-bordered overflow-x">
+					<p class="news-p">用电电价信息</p>
+					<table class="table table-bordered">
 						<thead>
 							<tr>
-								<th><input type="checkbox" class="checkAll" value="" /></th>
-								<th>序号</th>
-								<th>代码</th>
-								<th>省市</th>
-								<th>地市</th>
-								<th>区县</th>
-								<th>公司名称</th>
-								<th>负责区域</th>
-								<th>资源优势</th>
-								<th>渠道建立</th>
-								<th>客户关系</th>
-								<th>法定代表人姓名</th>
-								<th>业务负责人姓名</th>
-								<th>业务负责人移动电话</th>
-								<th>业务负责人邮箱</th>
-								<th>客户数量(家)</th>
-								<th>客户平均电量规模(万Kwh)</th>
-								<th>客户电量总规模(万Kwh)</th>
+								<th rowspan="2"><input type="checkbox" class="checkAll" value="" /></th>
+								<th rowspan="2">序号</th>
+								<th rowspan="2">代码</th>
+								<th rowspan="2">公司名称</th>
+								<th rowspan="2">用电分类</th>
+								<th colspan="2">基本电价(元/Kw.月)</th>
+								<th colspan="1">目录电价(元/Kwh)</th>
+								<th colspan="2">惩罚电价(元/Kvh)</th>
+								<th colspan="3">峰谷电价(元/Kwh)</th>
+								<th colspan="1">季节性(元/Kwh)</th>
+								<th colspan="2">蓄能电价(元/Kvh)</th>
+								<th rowspan="2">合同功率因数</th>
+							</tr>
+							<tr>
+								<td>容量电价</td>
+								<td>最大容量电价</td>
+								<td>电量电价</td>
+								<td>淘汰类</td>
+								<td>限制类</td>
+								<td>高峰</td>
+								<td>平段</td>
+								<td>低谷</td>
+								<td>尖峰电价</td>
+								<td>平段电价</td>
+								<td>低谷电价</td>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td><input type="checkbox" name="" id="" value="" /></td>
-								<td></td>
+								<td><input type="checkbox" class="checkAll" value="" /></td>
 								<td></td>
 								<td></td>
 								<td></td>
@@ -128,7 +148,7 @@
 			</div>
 
 		</div>
-		
+
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/contabs.min.js"></script>
@@ -144,14 +164,14 @@
 			function addInfo() {
 				layer.open({
 					type: 2,
-					title: '渠道商基本信息',
+					title: '用电电价新增',
 					skin: 'demo-class',
 					maxmin: true,
 					shade: [0.3, '#393D49'],
 					shadeClose: false,
 					id: '1',
 					area: ['1050px', '500px'],
-					content: 'channel-messageMask.html'
+					content: 'user_electrMask.html'
 				});
 			}
 		</script>
