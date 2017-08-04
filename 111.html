@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/style.min862f.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/background.css" />
+		<title></title>
+	</head>
+	<!DOCTYPE html>
+	<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/style.min862f.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/background.css" />
+		<title></title>
+	</head>
+
+	<body>
+		<div class="row service-main">
+			<form class="form-horizontal" method="post" action="<%=basePath%>basicInfo/readExcel.do" enctype="multipart/form-data">
+				<div class="col-xs-12 form-group">
+					<label class="col-xs-11 control-label">批量导入用户信息：<span class="addcolor">上传excel表格前，请先下载excel模板</span></label>
+				</div>
+				<input type="hidden" name="excelUrl" id="excelUrl" />
+				<div class="col-xs-12 form-group">
+					<div class="col-xs-6">
+						<input id="fileName" name="fileName" type="file" onchange="onCheck(this);" />
+						<input type="hidden" name="excelUrlShow" id="excelUrlShow" style="width: 315px;">
+					</div>
+					<div class="col-xs-4 text-center">
+						<input class="btn-col2 declar-btn1" type="submit" value="提交" />
+					</div>
+				</div>
+
+			</form>
+		</div>
+	</body>
+
+	</html>
+
+</html>
