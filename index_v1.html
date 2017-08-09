@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link href="css/bootstrap.min14ed.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/background.css" />
+		<link rel="stylesheet" type="text/css" href="css/palmshop1.css" />
+		<title></title>
+	</head>
+
+	<body>
+		<div class="col-xs-12 into-padd">
+			<div class="flex-wrapper">
+				<div class="into_center center_border">
+					<p class="center_p">月度竞价交易</p>
+					<div class="col-xs-6">
+						<p>总申报电量10000KWh</p>
+					</div>
+					<div class="col-xs-6">
+						<p>总成交电量8500KWh</p>
+					</div>
+					<div class="col-xs-6">
+						<p>参与客户数量：19家</p>
+					</div>
+					<div class="col-xs-6">
+						<p>平均统一出清价：-45.00厘/kWh</p>
+					</div>
+				</div>
+				<div class="into_center center_border marle">
+					<p class="center_p">月度竞价交易</p>
+					<div class="col-xs-6">
+						<p>总申报电量10000KWh</p>
+					</div>
+					<div class="col-xs-6">
+						<p>总成交电量8500KWh</p>
+					</div>
+					<div class="col-xs-6">
+						<p>参与客户数量：19家</p>
+					</div>
+					<div class="col-xs-6">
+						<p>平均统一出清价：-45.00厘/kWh</p>
+					</div>
+				</div>
+			</div>
+			<div class="echarts">
+				<div id="main1" style="width: 600px;height: 400px;"></div>
+			</div>
+		</div>
+
+		<script src="js/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var myChart = echarts.init(document.getElementById('main1'));
+
+			option = {
+				tooltip: {
+					trigger: 'axis',
+					axisPointer: {
+						type: 'cross',
+						crossStyle: {
+							color: '#999'
+						}
+					}
+				},
+				toolbox: {
+					feature: {
+						dataView: {
+							show: true,
+							readOnly: false
+						},
+						magicType: {
+							show: true,
+							type: ['line', 'bar']
+						},
+						restore: {
+							show: true
+						},
+						saveAsImage: {
+							show: true
+						}
+					}
+				},
+				legend: {
+					data: ['电量申报(kWh)', '成交电量(kWh)', '统一出清价(厘/kWh)'],
+					bottom:5
+				},
+				xAxis: [{
+					type: 'category',
+					data: ['1月', '2月', '3月', '4月', '5月', '6月'],
+					axisPointer: {
+						type: 'shadow'
+					}
+				}],
+				yAxis: [{
+					type: 'value',
+//					name: '水量',
+					min: 8000,
+					max: 10500,
+					interval: 500,
+					axisLabel: {
+						formatter: '{value} '
+					}
+				}, {
+					type: 'value',
+//					name: '温度',
+					min: -46,
+					max: -37,
+					interval: 1,
+					axisLabel: {
+						formatter: '{value}'
+					}
+				}],
+				series: [{
+					name: '电量申报(kWh)',
+					type: 'bar',
+					data: [10000.0, 10000.0, 10000.0, 10000.0, 10000.0, 10000.0]
+				}, {
+					name: '成交电量(kWh)',
+					type: 'bar',
+					data: [8800, 8800, 8800, 8800, 8800, 8800]
+				}, {
+					name: '统一出清价(厘/kWh)',
+					type: 'line',
+					yAxisIndex: 1,
+					data: [-46.2,-45.2,-44.9,-44.4,-43.4,-42.4]
+				}]
+			};
+			myChart.setOption(option);
+		</script>
+	</body>
+
+</html>

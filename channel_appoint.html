@@ -32,7 +32,7 @@
 				<button class="btn btn-col2 btn1" onclick="addInfo()" type="button">新增</button>
 				<button class="btn btn-col2 btn2" type="button">修改</button>
 				<button class="btn btn-col2" type="button">删除</button>
-				<button class="btn btn-col2" type="button">导入</button>
+				<button class="btn btn-col2" onclick="addInfo1()" type="button">导入</button>
 				<div class="shop-right1">
 					<p class="news-p">合同约定查询</p>
 					<div class="row service-main">
@@ -145,6 +145,7 @@
 			});
 
 			function addInfo() {
+				$("body").css({'overflow':'hidden'});
 				layer.open({
 					type: 2,
 					title: '合同约定新增',
@@ -155,6 +156,19 @@
 					id: '1',
 					area: ['1050px', '500px'],
 					content: 'channel_appointMask.html'
+				});
+			}
+			function addInfo1() {
+				layer.open({
+					type: 2,
+					title: '导入模板数据',
+					skin: 'demo-class',
+					maxmin: true,
+					shade: [0.3, '#393D49'],
+					shadeClose: false,
+					id: '1',
+					area: ['500px', '200px'],
+					content: 'company_messageInto.html'
 				});
 			}
 		</script>

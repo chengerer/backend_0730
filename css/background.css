@@ -130,10 +130,18 @@
 	white-space: nowrap;
 }
 
-
+.intobtn {
+	background: rgb(91, 204, 231);
+	border: 0;
+	border-radius: 5px;
+	line-height: 30px;
+	font-size: 16px;
+	color: white;
+	font-weight: 700;
+}
 
 .into-padd {
-	padding-right: 100px;
+	padding-right: 50px;
 }
 
 .declar-btn1 {
@@ -165,4 +173,19 @@
 }
 .roll-right.btn-group {
 	right: 70px;
+}
+/*首页*/
+.center_border {
+	border: 1px solid #ccc;
+	margin-top: 20px;
+}
+.center_p {
+	line-height: 40px;
+	text-align: center;
+}
+.into_center {
+	flex: 1;
+}
+.marle {
+	margin-left: 20px;
 }
