@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/style.min862f.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/background.css" />
+		<link rel="stylesheet" type="text/css" href="css/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" />
+		<title></title>
+	</head>
+
+	<body>
+		<div class="row service-main">
+			<form class="form-horizontal">
+				<div class="col-xs-6 form-group">
+					<label class="col-xs-4 control-label">合同编号：</label>
+					<div class="col-xs-8">
+						<input type="text" class="form-control" value="" />
+					</div>
+				</div>
+				<div class="col-xs-6 form-group">
+					<label class="col-xs-4 control-label">合同名称：</label>
+					<div class="col-xs-8">
+						<input type="text" class="form-control" value="" />
+					</div>
+				</div>
+				<div class="col-xs-6 form-group">
+					<label class="col-xs-4 control-label">合同类型：</label>
+					<div class="col-xs-8">
+						<select class="form-control">
+							<option value="">全部</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-xs-6 form-group">
+					<label class="col-xs-4 control-label">合同年用电量(万Kwh)：</label>
+					<div class="col-xs-8">
+						<input type="text" class="form-control" value="" />
+					</div>
+				</div>
+				<div class="col-xs-6 form-group">
+					<label class="col-xs-4 control-label">签订时间：</label>
+					<div class="col-xs-8">
+						<div class="input-group date" id="datetimepicker">
+							<input type="text" class="form-control">
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-th"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 form-group">
+					<label class="col-xs-4 control-label">生效时间：</label>
+					<div class="col-xs-8">
+						<div class="input-group date" id="datetimepicker1">
+							<input type="text" class="form-control">
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-th"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 form-group">
+					<label class="col-xs-4 control-label">交易起始时间：</label>
+					<div class="col-xs-8">
+						<div class="input-group date" id="datetimepicker2">
+							<input type="text" class="form-control">
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-th"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-12 text-center">
+					<input class="btn-col2 declar-btn1" type="button" value="提交" />
+				</div>
+			</form>
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//			时间控件
+			$(function() {
+				$('#datetimepicker, #datetimepicker1, #datetimepicker2').datepicker({
+					format: "yyyy/mm/dd",
+					language: "zh-CN",
+					calendarWeeks: true,
+					autoclose: true,
+					todayHighlight: true
+				});
+			});
+		</script>
+	</body>
+
+</html>

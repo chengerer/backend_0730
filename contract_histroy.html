@@ -8,7 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="renderer" content="webkit">
 		<meta http-equiv="Cache-Control" content="no-siteapp" />
-		<title>发电企业档案信信用记录</title>
+		<title>合同管理历史合同</title>
 		<meta name="keywords">
 		<meta name="description">
 
@@ -34,63 +34,23 @@
 				<button class="btn btn-col2" type="button">删除</button>
 				<button class="btn btn-col2" onclick="addInto()" type="button">导入</button>
 				<div class="shop-right1">
-					<p class="news-p">信息记录查询</p>
+					<p class="news-p">筛选条件</p>
 					<div class="row service-main">
 						<form class="form-horizontal">
 							<div class="col-xs-4 form-group">
-								<label class="col-xs-4 control-label">公司名称：</label>
-								<div class="col-xs-8">
-									<input type="text" class="form-control" value="" />
-								</div>
-							</div>
-							<div class="col-xs-4 form-group">
-								<label class="col-xs-4 control-label">风险状态：</label>
+								<label class="col-xs-4 control-label">年度：</label>
 								<div class="col-xs-8">
 									<select class="form-control">
 										<option value="">全部</option>
+										<option value="">2017</option>
 									</select>
 								</div>
 							</div>
 							<div class="col-xs-4 form-group">
-								<label class="col-xs-4 control-label">生产状态：</label>
+								<label class="col-xs-4 control-label">合同类型：</label>
 								<div class="col-xs-8">
 									<select class="form-control">
 										<option value="">全部</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-xs-4 form-group">
-								<label class="col-xs-4 control-label">税收欠交：</label>
-								<div class="col-xs-8">
-									<select class="form-control">
-										<option value="">全部</option>
-										<option value="">偶尔</option>
-										<option value="">时常</option>
-										<option value="">严重</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-xs-4 form-group">
-								<label class="col-xs-4 control-label">电费欠交：</label>
-								<div class="col-xs-8">
-									<select class="form-control">
-										<option value="">全部</option>
-										<option value="">偶尔</option>
-										<option value="">时常</option>
-										<option value="">严重</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-xs-4 form-group">
-								<label class="col-xs-4 control-label">机组类型：</label>
-								<div class="col-xs-8">
-									<select class="form-control">
-										<option value="volvo">请选择</option>
-										<option value="saab">超超临界</option>
-										<option value="opel">超临界</option>
-										<option value="audi">低耗</option>
-										<option value="audi">高耗</option>
-										<option value="audi">淘汰</option>
 									</select>
 								</div>
 							</div>
@@ -103,29 +63,24 @@
 				</div>
 				<!--月度电量调整-->
 				<div class="shop-right1">
-					<p class="news-p">信用记录信息</p>
+					<p class="news-p">历史合同</p>
 					<table class="table table-bordered">
 						<thead>
 							<tr>
 								<th><input type="checkbox" class="checkAll" value="" /></th>
 								<th>序号</th>
-								<th>代码</th>
-								<th>公司名称</th>
-								<th>风险状态</th>
-								<th>生产状态</th>
-								<th>税收欠交</th>
-								<th>电费欠交</th>
-								<th>信用评分</th>
-								<th>评估意见</th>
-								<th>评估等级</th>
+								<th>合同编码</th>
+								<th>合同名称</th>
+								<th>合同类型</th>
+								<th>合同年用电量（万Kwh）</th>
+								<th>签订时间</th>
+								<th>生效时间</th>
+								<th>交易起始时间</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td><input type="checkbox" name="" id="" value="" /></td>
-								<td></td>
-								<td></td>
-								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
@@ -165,7 +120,7 @@
 			</div>
 
 		</div>
-
+		
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/contabs.min.js"></script>
@@ -179,28 +134,29 @@
 			});
 
 			function addInfo() {
+				$("body").css({'overflow':'hidden'});
 				layer.open({
 					type: 2,
-					title: '发电企业档案信用记录新增',
+					title: '历史合同新增',
 					skin: 'demo-class',
 					maxmin: true,
 					shade: [0.3, '#393D49'],
 					shadeClose: false,
 					id: '1',
 					area: ['1050px', '500px'],
-					content: 'power_creditMask.html'
+					content: 'contract_histroyMask.html'
 				});
 			}
 			function addInto() {
 				layer.open({
 					type: 2,
-					title: '渠道商基本信息',
+					title: '导入模板数据',
 					skin: 'demo-class',
 					maxmin: true,
 					shade: [0.3, '#393D49'],
 					shadeClose: false,
 					id: '1',
-					area: ['500x', '200px'],
+					area: ['500px', '200px'],
 					content: 'company_messageInto.html'
 				});
 			}
