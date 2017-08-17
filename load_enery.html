@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/background.css" />
+		<link rel="stylesheet" type="text/css" href="css/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/palmshop1.css" />
+		<link href="css/bootstrap.min14ed.css" rel="stylesheet">
+		<title>用能监测</title>
+	</head>
+
+	<body>
+		<div class="col-xs-12 into-padd">
+			<div class="row service-main">
+				<form class="form-horizontal">
+					<div class="col-xs-4 form-group">
+						<label class="col-xs-4 control-label">公司名称：</label>
+						<div class="col-xs-8">
+							<input type="text" class="form-control" value="" />
+						</div>
+					</div>
+					<div class="col-xs-4 form-group">
+						<label class="col-xs-4 control-label">时间：</label>
+						<div class="col-xs-8">
+							<div class="input-daterange input-group" id="datepicker">
+								<input type="text" class="input-sm form-control" name="start" />
+								<span class="input-group-addon">--</span>
+								<input type="text" class="input-sm form-control" name="end" />
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-2 form-group text-left">
+						<input class="btn btn-col2 declar-btn pull-right message1" type="button" value="查询" />
+					</div>
+				</form>
+			</div>
+			<div class="flex-wrapper">
+				<div class="into_center center_border">
+					<p class="news-p">用能峰值</p>
+					<div class="col-xs-6">
+						<p class="load_p">本日MD值发生时段</p>
+					</div>
+					<div class="col-xs-6">
+						<p class="load_p">本日MD值</p>
+					</div>
+					<div class="col-xs-6">
+						<p class="blue">00:00--08:00</p>
+					</div>
+					<div class="col-xs-6">
+						<p class="orange">888888kW</p>
+					</div>
+					<div class="col-xs-6">
+						<p class="load_p">本日MD值发生时段</p>
+					</div>
+					<div class="col-xs-6">
+						<p class="load_p">本日MD值</p>
+					</div>
+					<div class="col-xs-6">
+						<p class="blue">00:00--08:00</p>
+					</div>
+					<div class="col-xs-6">
+						<p class="orange">888888kW</p>
+					</div>
+				</div>
+				<div class="into_center center_border marle">
+					<p class="news-p">环比</p>
+					<div class="col-xs-4">
+						<p class="load_p">当月用电(kW.h)</p>
+					</div>
+					<div class="col-xs-4">
+						<p class="load_p">昨日同期(kW.h)</p>
+					</div>
+					<div class="col-xs-4">
+						<p class="load_p">趋势</p>
+					</div>
+					<div class="col-xs-4">
+						<p class="orange">888888kW</p>
+					</div>
+					<div class="col-xs-4">
+						<p class="orange">888888kW</p>
+					</div>
+					<div class="col-xs-4">
+						<p class="orange">888888kW</p>
+					</div>
+
+					<div class="col-xs-4">
+						<p class="load_p">当月用电(kW.h)</p>
+					</div>
+					<div class="col-xs-4">
+						<p class="load_p">上月同期(kW.h)</p>
+					</div>
+					<div class="col-xs-4">
+						<p class="load_p">趋势</p>
+					</div>
+					<div class="col-xs-4">
+						<p class="orange">888888kW</p>
+					</div>
+					<div class="col-xs-4">
+						<p class="orange">888888kW</p>
+					</div>
+					<div class="col-xs-4">
+						<p class="orange">888888kW</p>
+					</div>
+					<div class="col-xs-4">
+						<p class="load_p">当年用电(kW.h)</p>
+					</div>
+					<div class="col-xs-4">
+						<p class="load_p">上年同期(kW.h)</p>
+					</div>
+					<div class="col-xs-4">
+						<p class="load_p">趋势</p>
+					</div>
+					<div class="col-xs-4">
+						<p class="orange">888888kW</p>
+					</div>
+					<div class="col-xs-4">
+						<p class="orange">888888kW</p>
+					</div>
+					<div class="col-xs-4">
+						<p class="orange">888888kW</p>
+					</div>
+				</div>
+
+			</div>
+			<div class="shop-right1 load">
+				<p class="summ-p">日负荷曲线</p>
+				<p class="summ-p1"><span class="orange">今日最大负荷量：4099Kw 时间：2017-07-04</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">昨日最大负荷量：4099Kw 时间：2017-07-04</span></p>
+				<div id="main" style="width: 80%;height:400px;"></div>
+			</div>
+			<div class="shop-right1 bott clearfix">
+				<p class="summ-p">历史电量</p>
+				<div id="main-1" class="col-xs-5" style="width: 40%;height: 250px;"></div>
+				<div id="main-2" class="col-xs-7" style="width: 60%;height: 350px;"></div>
+			</div>
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="js/echarts-liquidfill.min.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="js/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			//			时间控件
+			$('#datepicker').datepicker({
+				format: "yyyy-mm-dd",
+				language: "zh-CN",
+				calendarWeeks: true,
+				autoclose: true,
+				todayHighlight: true,
+				orientation: "bottom left"
+			});
+
+			var myChart = echarts.init(document.getElementById('main'));
+
+			option = {
+
+				tooltip: {
+					trigger: 'axis',
+					axisPointer: {
+						type: 'cross'
+					}
+				},
+				color: ['rgb(62,189,231)', 'orange'],
+				toolbox: {
+					show: true,
+					feature: {
+						//						saveAsImage: {}
+					}
+				},
+				xAxis: {
+					type: 'category',
+					boundaryGap: false,
+					data: ['0:00', '1:30', '3:00', '4:30', '6:00', '7:30', '9:00', '10:30', '12:00', '13:30', '15:00', '16:30', '18:00', '19:30', '21:00', '22:30']
+				},
+				yAxis: {
+					type: 'value',
+					name: '(单位)kW',
+					min: 0,
+					max: 50000,
+					interval: 10000,
+					axisLabel: {
+						//						formatter: '{value}'
+					},
+					axisPointer: {
+						snap: true
+					}
+				},
+				visualMap: {
+					show: false,
+					dimension: 0
+
+				},
+				series: [{
+					name: '今日',
+					type: 'line',
+					smooth: true,
+					data: [33300, 32380, 33250, 32260, 34270, 36300, 36550, 34500, 35400, 36390, 34380, 33890, 37400, 34500, 36600, 36780],
+
+				}, {
+					name: '昨日',
+					type: 'line',
+					smooth: true,
+					data: [36300, 35380, 38250, 38260, 37270, 39300, 38550, 35500],
+				}]
+			};
+
+			myChart.setOption(option);
+
+			var myChart = echarts.init(document.getElementById('main-1'));
+			option = {
+				tooltip: {
+					trigger: 'item',
+					formatter: "{a} {b} :{d}%",
+					textStyle: {
+						fontWeight: 'bold',
+						fontSize: 14
+					}
+				},
+				legend: {
+					orient: 'vertical',
+					left: 'left',
+					data: ['过去48小时', '过去31天']
+				},
+				toolbox: {
+					show: true,
+					orient: 'vertical',
+					left: 'right',
+					top: 'center',
+					feature: {
+						dataView: {
+							readOnly: false
+						},
+						restore: {},
+//						saveAsImage: {}
+					}
+				},
+				grid: [{
+					x: '7.5%',
+					y: '65%',
+					width: '88%',
+					height: '30%'
+				}, ],
+				xAxis: [{
+					show:false,
+					gridIndex: 0,
+					type: 'category',
+					axisTick: {
+						alignWithLabel: true
+					},
+					data: ['历史电量']
+				}, ],
+				yAxis: [{
+					gridIndex: 0,
+//					name: '学科',
+					show: false
+				}, ],
+				series: [{
+						name: '历史电量',
+						type: 'pie',
+						//roseType:'radius',
+						radius: '80%',
+						center: ['50%', '60%'],
+						legendHoverLink: false,
+						hoverAnimation: false,
+						clockwise: false,
+						data: [{
+								value:296,
+								name: '过去48小时'
+							},
+							{
+								value: 180,
+								name: '过去31天'
+							},
+							/*{value:335, name:'3'},
+							{value:1548, name:'4'},
+							{value:1548, name:'5'}*/
+						],
+						label: {
+							normal: {
+								position: 'inner',
+//								formatter: '{c}份',
+								textStyle: {
+									color: '#ffffff',
+									fontSize: 14
+								}
+							}
+						},
+					},
+				]
+			};
+
+			myChart.setOption(option);
+
+			var myChart = echarts.init(document.getElementById('main-2'));
+			option = {
+				tooltip: {
+					trigger: 'axis'
+				},
+				//				dataZoom: [{ // 这个dataZoom组件，默认控制x轴。
+				//						type: 'slider', // 这个 dataZoom 组件是 slider 型 dataZoom 组件
+				//						start: 10, // 左边在 10% 的位置。
+				//						end: 60 // 右边在 60% 的位置。
+				//					},
+				//					{ // 这个dataZoom组件，也控制x轴。
+				//						type: 'inside', // 这个 dataZoom 组件是 inside 型 dataZoom 组件
+				//						start: 10, // 左边在 10% 的位置。
+				//						end: 60 // 右边在 60% 的位置。
+				//					}
+				//				],
+				toolbox: {
+					feature: {
+						dataView: {
+							show: false,
+							readOnly: false
+						},
+						magicType: {
+							show: false,
+							type: ['line', 'bar']
+						},
+						restore: {
+							show: false
+						},
+						saveAsImage: {
+							show: false
+						}
+					}
+				},
+				legend: {
+					data: ['Time', 'speed(m/min)']
+				},
+				xAxis: [{
+					type: 'category',
+					data: [
+						'2015-08-12 17:35:03',
+						'2015-08-12 17:50:03',
+						'2015-08-12 18:05:03',
+						'2015-08-12 18:20:03',
+						'2015-08-12 18:35:03',
+						'2015-08-12 18:50:03',
+						'2015-08-12 19:05:03',
+						'2015-08-12 19:20:03',
+						'2015-08-12 19:35:03',
+						'2015-08-12 19:50:03',
+						'2015-08-12 20:05:03',
+						'2015-08-12 20:20:03',
+						'2015-08-12 20:35:03',
+						'2015-08-12 20:50:03',
+						'2015-08-12 21:05:03',
+						'2015-08-12 21:20:03',
+						'2015-08-12 21:35:03',
+						'2015-08-12 21:50:03',
+						'2015-08-12 22:05:03',
+						'2015-08-12 22:20:03',
+						'2015-08-12 22:35:03',
+						'2015-08-12 22:50:03',
+						'2015-08-12 23:05:03',
+						'2015-08-12 23:20:03',
+						'2015-08-12 23:35:03',
+						'2015-08-12 23:50:03',
+						'2015-08-13 00:05:03',
+						'2015-08-13 00:20:03',
+						'2015-08-13 00:35:03',
+						'2015-08-13 00:50:03',
+						'2015-08-13 01:05:03',
+						'2015-08-13 01:20:03',
+						'2015-08-13 01:35:03',
+						'2015-08-13 01:50:03',
+						'2015-08-13 02:05:03',
+						'2015-08-13 02:20:03',
+						'2015-08-13 02:35:03',
+						'2015-08-13 02:50:03',
+						'2015-08-13 03:05:03',
+						'2015-08-13 03:20:03',
+						'2015-08-13 03:35:03',
+						'2015-08-13 03:50:03',
+						'2015-08-13 04:05:03',
+						'2015-08-13 04:20:03',
+						'2015-08-13 04:35:03',
+						'2015-08-13 04:50:03',
+						'2015-08-13 05:05:03',
+						'2015-08-13 05:20:03',
+						'2015-08-13 05:35:03',
+						'2015-08-13 05:50:03',
+						'2015-08-13 06:05:03',
+						'2015-08-13 06:20:03',
+						'2015-08-13 06:35:03',
+						'2015-08-13 06:50:03',
+						'2015-08-13 07:05:03',
+						'2015-08-13 07:20:03',
+						'2015-08-13 07:35:03',
+						'2015-08-13 07:50:03',
+						'2015-08-13 08:05:03',
+						'2015-08-13 08:20:03',
+						'2015-08-13 08:35:03',
+						'2015-08-13 08:50:03',
+						'2015-08-13 09:05:03',
+						'2015-08-13 09:20:03',
+						'2015-08-13 09:35:03',
+						'2015-08-13 09:50:03',
+						'2015-08-13 10:05:03',
+						'2015-08-13 10:20:03',
+						'2015-08-13 10:35:03',
+						'2015-08-13 10:50:03',
+						'2015-08-13 11:05:03',
+						'2015-08-13 11:20:03',
+						'2015-08-13 11:35:03',
+						'2015-08-13 11:50:03',
+						'2015-08-13 12:05:03',
+						'2015-08-13 12:20:03',
+						'2015-08-13 12:35:03',
+						'2015-08-13 12:50:03',
+						'2015-08-13 13:05:03',
+						'2015-08-13 13:20:03',
+						'2015-08-13 13:35:03',
+						'2015-08-13 13:50:03',
+						'2015-08-13 14:05:03',
+						'2015-08-13 14:20:03',
+						'2015-08-13 14:35:03',
+						'2015-08-13 14:50:03',
+						'2015-08-13 15:05:03',
+						'2015-08-13 15:20:03',
+						'2015-08-13 15:35:03',
+						'2015-08-13 15:50:03',
+						'2015-08-13 16:05:03',
+						'2015-08-13 16:20:03',
+						'2015-08-13 16:35:03',
+						'2015-08-13 16:50:03',
+						'2015-08-13 17:05:03',
+						'2015-08-13 17:20:03',
+						'2015-08-13 17:35:03',
+						'2015-08-13 17:50:03',
+						'2015-08-13 18:05:03',
+						'2015-08-13 18:20:03',
+						'2015-08-13 18:35:03',
+						'2015-08-13 18:50:03',
+						'2015-08-13 19:05:03',
+						'2015-08-13 19:20:03',
+						'2015-08-13 19:35:03',
+						'2015-08-13 19:50:03',
+						'2015-08-13 20:05:03',
+						'2015-08-13 20:20:03',
+						'2015-08-13 20:35:03',
+						'2015-08-13 20:50:03',
+						'2015-08-13 21:05:03',
+						'2015-08-13 21:20:03',
+						'2015-08-13 21:35:03',
+						'2015-08-13 21:50:03',
+						'2015-08-13 22:05:03',
+						'2015-08-13 22:20:03',
+						'2015-08-13 22:35:03',
+						'2015-08-13 22:50:03',
+						'2015-08-13 23:05:03',
+
+					]
+				}],
+				yAxis: [{
+						type: 'value',
+						//						name: 'group',
+						min: 0,
+						max: 100000,
+						interval: 20000,
+						axisLabel: {
+							formatter: '{value} '
+						}
+					},
+
+					{
+						show: false,
+						type: 'value',
+						name: 'speed(m/min)',
+						min: 0,
+						max: 5000,
+						axisLabel: {
+							formatter: '{value}m/min '
+						}
+					}
+				],
+				series: [{
+					name: '历史电量',
+					type: 'bar',
+					yAxisIndex: 1,
+					data: [3, 3, 3, 3, 7, 5, 5, 5, 8, 7, 9, 9, 9, 9, 1237, 1121, 916, 750, 605, 449, 320, 209, 144, 84, 49, 30, 25, 31, 22, 24, 19, 33, 40, 45, 40, 35, 15, 14, 17, 17, 17, 24, 43, 113, 269, 495, 778, 1122, 1581, 2007, 2477, 2865, 3186, 3478, 3647, 3781, 3875, 3924, 3879, 3888, 3839, 3791, 3740, 3635, 3571, 3488, 3437, 3387, 3308, 3269, 3213, 3157, 3105, 3069, 3028, 2971, 2946, 2931, 2916, 2942, 2922, 2955, 2948, 2988, 3030, 3059, 3061, 3157, 3201, 3294, 3377, 3462, 3554, 3618, 3642, 3626, 3624, 3575, 3516, 3458, 3322, 3233, 3086, 2904, 2702, 2512, 2253, 2032, 1776, 1557, 1313, 1085, 875, 703, 568, 423, 280, 171, 115]
+				}]
+			};
+
+			myChart.setOption(option);
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div id="main" style="width: 500;height:400px;"></div>
+		
+		<script src="js/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+				var myChart = echarts.init(document.getElementById('main'));
+				option = {
+					title: {
+						text: '年用电量top10企业分类',
+						x: 'center',
+						top:'10'
+					},
+					tooltip: {
+						trigger: 'item',
+						formatter: "{a} <br/>{b} : {c} ({d}%)"
+					},
+					legend: {
+						orient: 'vertical',
+						bottom: 'bottom',
+						data: ['10000-20000', '20000-30000', '30000-40000', '40000-50000']
+					},
+					series: [{
+						name: '访问来源',
+						type: 'pie',
+						radius: '55%',
+						center: ['50%', '50%'],
+						data: [{
+								value: 335,
+								name: '网络工程'
+							},
+							{
+								value: 310,
+								name: '邮件营销'
+							},
+							{
+								value: 234,
+								name: '联盟广告'
+							},
+							{
+								value: 135,
+								name: '视频广告'
+							},
+							{
+								value: 1548,
+								name: '搜索引擎'
+							},
+							],
+							label: {
+							normal: {
+								position: 'inner',
+								formatter: '{a}\n{b}\n{c}份',//设置饼图上显示的内容
+								textStyle: {
+									color: '#ffffff',
+									fontSize: 14
+								}
+							}
+						},
+						itemStyle: {
+							emphasis: {
+								shadowBlur: 10,
+								shadowOffsetX: 0,
+								shadowColor: 'rgba(0, 0, 0, 0.5)'
+							}
+						}
+					}]
+				};
+				// 使用刚指定的配置项和数据显示图表。
+				myChart.setOption(option);
+		</script>
+	</body>
+</html>

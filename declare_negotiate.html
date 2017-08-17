@@ -56,14 +56,11 @@
 								</div>
 							</div>
 							<div class="col-xs-4 form-group">
-								<label class="col-xs-4 control-label">年合同总量：</label>
-								<div class="col-xs-8">
-									<select class="form-control">
-										<option value="">全部</option>
-										<option value="">10000~20000</option>
-										<option value="">20000~30000</option>
-										<option value="">30000~40000</option>
-									</select>
+								<label class="col-xs-4 control-label">年合同总量区间：</label>
+								<div class="input-daterange input-group" id="datepicker">
+									<input type="text" class="input-sm form-control" name="start" />
+									<span class="input-group-addon">--</span>
+									<input type="text" class="input-sm form-control" name="end" />
 								</div>
 							</div>
 							<div class="col-xs-8 col-xs-offset-4">
@@ -185,7 +182,7 @@
 					content: 'company_messageInto.html'
 				});
 			}
-//			时间控件
+			//			时间控件
 			$(function() {
 				$('#datetimepicker').datepicker({
 					format: "yyyy/mm/dd",
@@ -194,7 +191,7 @@
 					autoclose: true,
 					todayHighlight: true
 				});
-			});			
+			});
 		</script>
 	</body>
 

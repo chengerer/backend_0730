@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/background.css" />
+		<link rel="stylesheet" type="text/css" href="css/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/palmshop1.css" />
+		<link href="css/bootstrap.min14ed.css" rel="stylesheet">
+		<title>电量分析</title>
+	</head>
+
+	<body>
+		<div class="col-xs-12 into-padd">
+			<div class="row service-main">
+				<form class="form-horizontal">
+					<div class="col-xs-4 form-group">
+						<label class="col-xs-4 control-label">时间：</label>
+						<div class="col-xs-8">
+							<div class="input-daterange input-group" id="datepicker">
+								<input type="text" class="input-sm form-control" name="start" />
+								<span class="input-group-addon">--</span>
+								<input type="text" class="input-sm form-control" name="end" />
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-2 form-group">
+						<input class="btn btn-col2 declar-btn pull-right message1" type="button" value="查询" />
+					</div>
+				</form>
+			</div>
+			<div class="shop-right1 load clearfix">
+				<p class="news-p">容量数据统计</p>
+				<div class="col-xs-6">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>容量</th>
+								<th>最大负荷</th>
+								<th>最小负荷</th>
+								<th>企业名称</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-xs-6">
+					<div id="main3" style="width: 100%;height: 400px;"></div>
+				</div>
+				
+			</div>
+			<div class="shop-right1 bott clearfix">
+				<p class="news-p">企业用电量统计</p>
+				<div id="main-1" class="col-xs-6" style="height: 250px;"></div>
+				<div id="main-2" class="col-xs-6" style="height: 350px;"></div>
+			</div>
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="js/echarts-liquidfill.min.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="js/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			//			时间控件
+			$('#datepicker').datepicker({
+				format: "yyyy-mm-dd",
+				language: "zh-CN",
+				calendarWeeks: true,
+				autoclose: true,
+				todayHighlight: true,
+				orientation: "bottom left"
+			});
+
+
+			var myChart = echarts.init(document.getElementById('main3'));
+				//				app.title = '坐标轴刻度与标签对齐';
+
+				option = {
+					title: {
+						text: '企业容量',
+						x: 'center',
+						top:'10'
+					},
+					color: ['#3398DB'],
+					tooltip: {
+						trigger: 'axis',
+						axisPointer: { // 坐标轴指示器，坐标轴触发有效
+							type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+						}
+					},
+					grid: {
+						//left: '3%',
+						//right: '4%',
+						bottom: '3%',
+						containLabel: true
+					},
+					xAxis: [{
+						type: 'category',
+						data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+						axisTick: {
+							alignWithLabel: true
+						}
+					}],
+					yAxis: [{
+						type: 'value',
+						min: 0,
+						max: 18000,
+						interval: 2000
+					}],
+					series: [{
+						name: '直接访问',
+						type: 'bar',
+						barWidth: '60%',
+						data: [2210, 3352, 3200, 3334, 3490, 4330, 5220, 5210, 7252, 6200, 9334, 8390]
+					}]
+				};
+				// 使用刚指定的配置项和数据显示图表。
+				myChart.setOption(option);
+				
+				
+				
+				var myChart = echarts.init(document.getElementById('main-1'));
+				//				app.title = '坐标轴刻度与标签对齐';
+
+				option = {
+					title: {
+						text: '企业年用电量Top10',
+						x: 'center',
+						top:'10'
+					},
+					color: ['#3398DB'],
+					tooltip: {
+						trigger: 'axis',
+						axisPointer: { // 坐标轴指示器，坐标轴触发有效
+							type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+						}
+					},
+					grid: {
+						//left: '3%',
+						//right: '4%',
+						bottom: '3%',
+						containLabel: true
+					},
+					xAxis: [{
+						type: 'category',
+						data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+						axisTick: {
+							alignWithLabel: true
+						}
+					}],
+					yAxis: [{
+						type: 'value',
+						min: 0,
+						max: 18000,
+						interval: 2000
+					}],
+					series: [{
+						name: '直接访问',
+						type: 'bar',
+						barWidth: '60%',
+						data: [2210, 3352, 3200, 3334, 3490, 4330, 5220, 5210, 7252, 6200, 9334, 8390]
+					}]
+				};
+				// 使用刚指定的配置项和数据显示图表。
+				myChart.setOption(option);
+				
+				var myChart = echarts.init(document.getElementById('main-2'));
+				option = {
+					title: {
+						text: '年用电量top10企业分类',
+						x: 'center',
+						top:'10'
+					},
+					tooltip: {
+						trigger: 'item',
+						formatter: "{a} <br/>{b} : {c} ({d}%)"
+					},
+					legend: {
+						orient: 'vertical',
+						bottom: 'bottom',
+						data: ['10000-20000', '20000-30000', '30000-40000', '40000-50000']
+					},
+					series: [{
+						name: '访问来源',
+						type: 'pie',
+						radius: '55%',
+						center: ['50%', '50%'],
+						data: [{
+								value: 335,
+								name: '10000-20000'
+							},
+							{
+								value: 310,
+								name: '邮件营销'
+							},
+							{
+								value: 234,
+								name: '联盟广告'
+							},
+							{
+								value: 135,
+								name: '视频广告'
+							},
+							{
+								value: 1548,
+								name: '搜索引擎'
+							}
+						],
+						itemStyle: {
+							emphasis: {
+								shadowBlur: 10,
+								shadowOffsetX: 0,
+								shadowColor: 'rgba(0, 0, 0, 0.5)'
+							}
+						}
+					}]
+				};
+				// 使用刚指定的配置项和数据显示图表。
+				myChart.setOption(option);
+
+			
+		</script>
+	</body>
+
+</html>
