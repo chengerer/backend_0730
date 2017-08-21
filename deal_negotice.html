@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+	<!--  /index.html -->
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<title>交易结果双边协商</title>
+		<meta name="keywords">
+		<meta name="description">
+
+		<!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="css/bootstrap.min14ed.css" rel="stylesheet">
+		<link href="css/font-awesome.min93e3.css" rel="stylesheet">
+		<link href="css/animate.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/palmshop1.css" />
+		<link rel="stylesheet" type="text/css" href="css/background.css" />
+		<link href="css/style.min862f.css" rel="stylesheet">
+	</head>
+
+	<body class="fixed-sidebar full-height-layout gray-bg">
+		<!--右侧部分开始-->
+		<div class="col-xs-12 into-padd">
+			<div class="layui-tab-item">
+				<button class="btn btn-col2 btn1" onclick="addInfo()" type="button">新增</button>
+				<button class="btn btn-col2 btn2" type="button">修改</button>
+				<button class="btn btn-col2" type="button">删除</button>
+				<button class="btn btn-col2" onclick="addInto()" type="button">导入</button>
+				<div class="shop-right1">
+					<p class="news-p">筛选条件</p>
+					<div class="row service-main">
+						<form class="form-horizontal">
+							<div class="col-xs-4 form-group">
+								<label class="col-xs-4 control-label">公司名称：</label>
+								<div class="col-xs-8">
+									<input type="text" class="form-control" value="" />
+								</div>
+							</div>
+							<div class="col-xs-8 form-group">
+								<input class="btn btn-col2 declar-btn pull-right message1" type="button" value="查询" />
+								<input class="btn btn-col2 declar-btn pull-right message1" type="button" value="重置" />
+							</div>
+						</form>
+					</div>
+				</div>
+				<!--月度电量调整-->
+				<div class="shop-right1">
+					<p class="news-p">双边协商交易结果列表</p>
+					<table class="table table-bordered overflow-x">
+						<thead>
+							<tr>
+								<th><input type="checkbox" class="checkAll" value="" /></th>
+								<th>序号</th>
+								<th>代码</th>
+								<th>公司名称</th>
+								<th>长协申报时间</th>
+								<th>长协申报总电量（Mwh）</th>
+								<th>长协发布时间</th>
+								<th>长协成交总电量（Mwh）</th>
+								<th>长协成交第一段电量（Mwh）</th>
+								<th>长协成交第一段电价（元/Kwh）</th>
+								<th>长协成交第二段电量（Mwh）</th>
+								<th>长协成交第二段电价（元/Kwh）</th>
+								<th>长协成交第三段电量（Mwh）</th>
+								<th>长协成交第三段电价（元/Kwh）</th>
+								<th>长协成交均价（元/Kwh）</th>
+								<th>长协成交均价差（元/Kwh）</th>
+								<th>长协未成交电量（Mwh）</th>
+								<th>长协月电量（Mwh）</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><input type="checkbox" name="" id="" value="" /></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="paging-cen">
+						<ul class="pagination">
+							<li>
+								<a class="paging-padd" href="#">&laquo;</a>
+							</li>
+							<li class="active">
+								<a class="paging-padd" href="#">1</a>
+							</li>
+							<li>
+								<a class="paging-padd" href="#">2</a>
+							</li>
+							<li>
+								<a class="paging-padd" href="#">3</a>
+							</li>
+							<li>
+								<a class="paging-padd" href="#">4</a>
+							</li>
+							<li>
+								<a class="paging-padd" href="#">5</a>
+							</li>
+							<li>
+								<a class="paging-padd" href="#">&raquo;</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/contabs.min.js"></script>
+		<script src="js/plugins/layer/layer.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plugins/layer/laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$(".checkAll").on('click', function() {
+					$("input[type=checkbox]").prop("checked", this.checked);
+				});
+			});
+
+			function addInfo() {
+				layer.open({
+					type: 2,
+					title: '双边协商交易结果新增',
+					skin: 'demo-class',
+					maxmin: true,
+					shade: [0.3, '#393D49'],
+					shadeClose: false,
+					id: '1',
+					area: ['1050px', '500px'],
+					content: 'deal_negoticeMask.html'
+				});
+			}
+
+			function addInto() {
+				layer.open({
+					type: 2,
+					title: '导入模板数据',
+					skin: 'demo-class',
+					maxmin: true,
+					shade: [0.3, '#393D49'],
+					shadeClose: false,
+					id: '1',
+					area: ['500px', '200px'],
+					content: 'company_messageInto.html'
+				});
+			}
+		</script>
+	</body>
+
+</html>
