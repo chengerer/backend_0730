@@ -44,6 +44,7 @@
 								</div>
 							</div>
 							<div class="col-xs-8 form-group">
+								<input class="btn btn-col2 declar-btn pull-right refer" type="button" value="查询所有" />
 								<input class="btn btn-col2 declar-btn pull-right message1" type="button" value="查询" />
 								<input class="btn btn-col2 declar-btn pull-right message1" type="button" value="重置" />
 							</div>
@@ -53,7 +54,7 @@
 				<!--月度电量调整-->
 				<div class="shop-right1">
 					<p class="news-p">双边协商交易结果列表</p>
-					<table class="table table-bordered overflow-x">
+					<table class="table table-bordered">
 						<thead>
 							<tr>
 								<th><input type="checkbox" class="checkAll" value="" /></th>
@@ -138,8 +139,15 @@
 			$(function() {
 				$(".checkAll").on('click', function() {
 					$("input[type=checkbox]").prop("checked", this.checked);
+					
+				});
+				$(".checkAll").parent().siblings().slice(0,12).show().end().slice(12,20).hide().length;
+//				$(".checkAll").siblings().slice(0,12).show().end().slice(12,20).hide();
+				$(".refer").on('click',function(){
+					$(this).css({'display':'block','overflow-x':'scroll','overflow-y':'hidden','white-space':'nowrap'})
 				});
 			});
+			
 
 			function addInfo() {
 				layer.open({
