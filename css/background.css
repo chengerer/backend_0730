@@ -226,6 +226,15 @@
 	transition: width .6s ease;
 }
 
-.checkBll>td {
+/*.checkBll>td {
+	display: none;
+}
+*/
+
+.table-collapsed td:nth-child(9) ~ td {
+	display: none;
+}
+
+.table-collapsed th:nth-child(9) ~ th {
 	display: none;
 }
