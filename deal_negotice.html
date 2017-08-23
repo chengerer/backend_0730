@@ -78,8 +78,48 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td><input type="checkbox" name="" id="" value="" /></td>
+							<tr class="checkBll">
+								<td><input type="checkbox" value="" /></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="checkBll">
+								<td><input type="checkbox" value="" /></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="checkBll">
+								<td><input type="checkbox"  value="" /></td>
 								<td></td>
 								<td></td>
 								<td></td>
@@ -139,12 +179,16 @@
 			$(function() {
 				$(".checkAll").on('click', function() {
 					$("input[type=checkbox]").prop("checked", this.checked);
-					
 				});
-				$(".checkAll").parent().siblings().slice(0,12).show().end().slice(12,20).hide().length;
-//				$(".checkAll").siblings().slice(0,12).show().end().slice(12,20).hide();
+				$(".checkAll").parent().siblings().slice(0,10).show().end().slice(10).hide();
+				console.log($(".checkBll").children().length)
+				
+//				$(".checkBll").children().slice(0,10).show();
+//				console.log($(".checkBll").children().slice(0,10).show().length);
+//				$(".checkBll").siblings().slice(0,10).show().end().slice(10).hide();
 				$(".refer").on('click',function(){
-					$(this).css({'display':'block','overflow-x':'scroll','overflow-y':'hidden','white-space':'nowrap'})
+					$(".checkAll").parent().siblings().show().parents('table').addClass('overflow-x');
+					$(".checkBll").parent().siblings().show();
 				});
 			});
 			
