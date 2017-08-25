@@ -1,155 +1,183 @@
-
-
 body {
 	font-size: 16px;
 }
+
 .shop-main {
 	margin-top: 30px;
 }
-.shop-bac, .shop-left {
-	background: rgb(249,249,249);
+
+.shop-bac,
+.shop-left {
+	background: rgb(249, 249, 249);
 }
+
 .shop-bac {
 	border: 1px solid #CCCCCC;
 	padding-left: 0;
 	padding-right: 0;
 	text-align: center;
 }
+
 .shop-left {
 	margin-top: 50px;
 }
+
 .shop-spana {
 	width: 46%;
 	/* padding-right: 10px; */
 	/* padding-left: 10px; */
-	display:inline-block;
+	display: inline-block;
 	text-align: center;
 }
+
 .shop-pa {
 	line-height: 50px;
 }
-.shop-pa, .shop-p {
+
+.shop-pa,
+.shop-p {
 	margin-bottom: 0;
 }
+
 .shop-p {
 	line-height: 40px;
 	border-top: 1px solid #CCCCCC;
 }
+
 .shop-imga {
 	margin-top: 20px;
 }
+
 .shop-ul {
 	padding-left: 0;
 }
+
 .shop-li {
-	/* padding-left: 15%; */
 	text-align: center;
 	line-height: 60px;
 	font-size: 18px;
 	border: 1px solid #CCCCCC;
 	margin-top: -1px;
-	/* padding-right: 10px; */
-	/*cursor: pointer;*/
 }
+
 .shop-li a {
-	/*padding-left: 10px;*/
 	color: #242E3B;
 }
 
-.shop-right, .shop-right1 {
+.shop-right,
+.shop-right1 {
 	width: 100%;
 	border: 1px solid #CCCCCC;
-	background: rgb(249,249,249);
+	background: rgb(249, 249, 249);
 }
+
 .shop-right {
 	padding: 20px;
 }
+
 .shop-right1 {
 	margin-bottom: 20px;
 }
+
 .panel-heading {
-	background: rgb(214,244,249) !important;
+	background: rgb(214, 244, 249) !important;
 }
+
 .mode {
 	width: 200px;
 	line-height: 50px;
-	background: rgb(91,204,231);
+	background: rgb(91, 204, 231);
 	border: 0;
 	border-radius: 20px;
 	margin: 50px 40%;
 	color: white;
 	font-weight: bold;
 }
+
 .collapsed {
 	display: block;
 }
+
 .panel-span {
 	font-size: 24px;
 }
+
 .item01 {
 	flex: 1;
 }
-/*.btn-col1 {
-	background: rgb(0,172,226);
-}*/
-.btn-col2 {
-	background: rgb(91,204,231);
+
+.btn-col2,
+.btn-col3 {
+	background: rgb(91, 204, 231);
 	color: white;
 	font-weight: bold;
 }
+
 .btn-col2:hover {
 	color: white;
 	font-weight: bold;
 }
-/*.btn-col1.btn-col2, .btn-col1:hover {
-	background: rgb(0,172,226);
-}*/
+
 .btn {
 	margin-bottom: 20px;
 }
+
 .btn:hover {
-	background: rgb(0,172,226);
+	background: rgb(0, 172, 226);
 }
-.news-p, .summ-p {
+
+.news-p,
+.summ-p {
 	margin-bottom: 0;
 	text-align: center;
 	font-weight: bold;
 	letter-spacing: 5px;
 	line-height: 50px;
 }
+
 .news-p {
-	background: rgb(214,244,249);
+	background: rgb(214, 244, 249);
 }
+
 .news-ul {
 	padding-bottom: 15px;
 }
+
 .news-li {
 	list-style: disc;
 }
+
 .news-h4 {
 	font-weight: bold;
 }
+
 .news-span {
 	font-weight: 400;
 	margin-left: 20px;
 	font-size: 14px;
 	color: #61656B;
 }
+
 .col-xs-3 {
 	width: 22%;
 }
 
+
 /* 电量申报 */
+
 .declar-form {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	padding-left: 10px;
 }
+
 .declar-btn {
 	border: 0;
 	width: 80px;
 	border-radius: 5px;
-	height: 30px;
+	height: 32px;
+	background: rgb(91, 204, 231);
+	color: white;
 	margin-right: 10px;
 }
 
@@ -161,57 +189,114 @@ body {
 .table {
 	text-align: center;
 }
-thead > tr > th {
+
+thead>tr>th {
 	text-align: center !important;
 }
+
 .commons {
 	width: 100%
 }
+
 .scroll {
 	display: block;
 	overflow-x: scroll;
 	overflow-y: hidden;
 	white-space: nowrap;
 }
+
 .shop-dis {
 	padding-right: 10px;
 }
+
 .caret {
 	position: absolute;
 	margin-left: .5em;
 	margin-top: 1.6em;
 }
+
 .coll-font {
 	font-size: 16px;
 }
+
 .shop-li2 {
 	line-height: 40px;
 }
+
 .orange {
-	color: rgb(246,172,70);
+	color: rgb(92, 92, 95);
 	font-size: 20px;
-} 
+}
+
 .blue {
-	color: rgb(62,189,231);
+	color: rgb(92, 92, 95);
 	font-size: 18px;
 }
+
 .padd {
 	padding-left: 1em;
 }
+
 .paddt {
 	padding-top: 1em;
 }
+
 .summ-p1 {
 	text-align: center;
 }
+
 .bott {
 	margin-bottom: 60px;
 }
 
-.load_p {
-	font-size: 16px;
-}
 .load {
-	/*text-align: center;*/
 	margin-top: 10px;
+}
+
+.result {
+	border-bottom: 2px solid orange;
+}
+
+.result1 {
+	border-bottom: 2px solid rgb(62, 189, 231);
+}
+
+.oranges {
+	color: orange;
+}
+
+.orange1 {
+	color: rgb(62, 189, 231);
+}
+
+
+/*球形*/
+
+.top {
+	background: rgb(62, 227, 229);
+}
+
+.foot {
+	background: rgb(22, 177, 179);
+}
+
+.all {
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+}
+
+.top, .foot {
+	width: 200px;
+	text-align: center;
+	line-height: 100px;
+	
+}
+.all {
+	margin: 100px auto;
+	cursor: pointer;
+}
+.service-mains {
+	margin-top: 20px;
 }

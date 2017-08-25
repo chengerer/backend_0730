@@ -12,7 +12,7 @@
 
 	<body>
 		<div class="col-xs-12 into-padd">
-			<div class="row service-main">
+			<div class="row service-mains">
 				<form class="form-horizontal">
 					<div class="col-xs-4 form-group">
 						<label class="col-xs-4 control-label">公司名称：</label>
@@ -20,18 +20,8 @@
 							<input type="text" class="form-control" value="" />
 						</div>
 					</div>
-					<div class="col-xs-4 form-group">
-						<label class="col-xs-4 control-label">时间：</label>
-						<div class="col-xs-8">
-							<div class="input-daterange input-group" id="datepicker">
-								<input type="text" class="input-sm form-control" name="start" />
-								<span class="input-group-addon">--</span>
-								<input type="text" class="input-sm form-control" name="end" />
-							</div>
-						</div>
-					</div>
 					<div class="col-xs-2 form-group text-left">
-						<input class="btn btn-col2 declar-btn pull-right message1" type="button" value="查询" />
+						<input class="declar-btn pull-right" type="button" value="查询" />
 					</div>
 				</form>
 			</div>
@@ -45,10 +35,10 @@
 						<p class="load_p">本日MD值</p>
 					</div>
 					<div class="col-xs-6">
-						<p class="blue">00:00--08:00</p>
+						<p class="blue text-center">00:00--08:00</p>
 					</div>
 					<div class="col-xs-6">
-						<p class="orange">888888kW</p>
+						<p class="orange text-center">888888kW</p>
 					</div>
 					<div class="col-xs-6">
 						<p class="load_p">本日MD值发生时段</p>
@@ -57,10 +47,10 @@
 						<p class="load_p">本日MD值</p>
 					</div>
 					<div class="col-xs-6">
-						<p class="blue">00:00--08:00</p>
+						<p class="blue text-center">00:00--08:00</p>
 					</div>
 					<div class="col-xs-6">
-						<p class="orange">888888kW</p>
+						<p class="orange text-center">888888kW</p>
 					</div>
 				</div>
 				<div class="into_center center_border marle">
@@ -75,13 +65,13 @@
 						<p class="load_p">趋势</p>
 					</div>
 					<div class="col-xs-4">
-						<p class="orange">888888kW</p>
+						<p class="orange text-center">888888kW</p>
 					</div>
 					<div class="col-xs-4">
-						<p class="orange">888888kW</p>
+						<p class="orange text-center">888888kW</p>
 					</div>
 					<div class="col-xs-4">
-						<p class="orange">888888kW</p>
+						<p class="oranges orange text-center"><span class="result">888888akW</span><br />5555</p>
 					</div>
 
 					<div class="col-xs-4">
@@ -94,13 +84,13 @@
 						<p class="load_p">趋势</p>
 					</div>
 					<div class="col-xs-4">
+						<p class="orange text-center">888888kW</p>
+					</div>
+					<div class="col-xs-4 text-center">
 						<p class="orange">888888kW</p>
 					</div>
 					<div class="col-xs-4">
-						<p class="orange">888888kW</p>
-					</div>
-					<div class="col-xs-4">
-						<p class="orange">888888kW</p>
+						<p class="orange1 orange text-center"><span class="result1">888888akW</span><br />5555</p>
 					</div>
 					<div class="col-xs-4">
 						<p class="load_p">当年用电(kW.h)</p>
@@ -112,33 +102,37 @@
 						<p class="load_p">趋势</p>
 					</div>
 					<div class="col-xs-4">
-						<p class="orange">888888kW</p>
+						<p class="orange text-center">888888kW</p>
 					</div>
 					<div class="col-xs-4">
-						<p class="orange">888888kW</p>
+						<p class="orange text-center">888888kW</p>
 					</div>
 					<div class="col-xs-4">
-						<p class="orange">888888kW</p>
+						<p class="orange orange1 text-center"><span class="result1">888888akW</span><br />5555</p>
 					</div>
 				</div>
 
 			</div>
 			<div class="shop-right1 load">
 				<p class="summ-p">日负荷曲线</p>
-				<p class="summ-p1"><span class="orange">今日最大负荷量：4099Kw 时间：2017-07-04</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">昨日最大负荷量：4099Kw 时间：2017-07-04</span></p>
-				<div id="main" style="width: 80%;height:400px;"></div>
+				<p class="summ-p1"><span class="orange oranges">今日最大负荷量：4099Kw 时间：2017-07-04</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue orange1">昨日最大负荷量：4099Kw 时间：2017-07-04</span></p>
+				<div id="main" style="width: 90%;height:400px;"></div>
 			</div>
 			<div class="shop-right1 bott clearfix">
 				<p class="summ-p">历史电量</p>
-				<div id="main-1" class="col-xs-5" style="width: 40%;height: 250px;"></div>
-				<div id="main-2" class="col-xs-7" style="width: 60%;height: 350px;"></div>
+				<div class="col-xs-4 enery" style="width: 30%;height: 250px;">
+					<div class="all">
+						<div class="top">过去48小时</div>
+						<div class="foot">过去31天</div>
+					</div>
+				</div>
+				<div id="main-2" class="col-xs-8" style="width: 70%;height: 350px;"></div>
 			</div>
 		</div>
 
 		<script src="js/jquery.min.js"></script>
 		<script src="js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js" type="text/javascript" charset="utf-8"></script>
-		<!--<script src="js/echarts-liquidfill.min.js" type="text/javascript" charset="utf-8"></script>-->
 		<script src="js/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
 
 		<script type="text/javascript">
@@ -161,6 +155,9 @@
 					axisPointer: {
 						type: 'cross'
 					}
+				},
+				legend: {
+					data: ['昨日', '今日']
 				},
 				color: ['rgb(62,189,231)', 'orange'],
 				toolbox: {
@@ -208,90 +205,89 @@
 
 			myChart.setOption(option);
 
-			var myChart = echarts.init(document.getElementById('main-1'));
-			option = {
-				tooltip: {
-					trigger: 'item',
-					formatter: "{a} {b} :{d}%",
-					textStyle: {
-						fontWeight: 'bold',
-						fontSize: 14
-					}
-				},
-				legend: {
-					orient: 'vertical',
-					left: 'left',
-					data: ['过去48小时', '过去31天']
-				},
-				toolbox: {
-					show: true,
-					orient: 'vertical',
-					left: 'right',
-					top: 'center',
-					feature: {
-						dataView: {
-							readOnly: false
-						},
-						restore: {},
-//						saveAsImage: {}
-					}
-				},
-				grid: [{
-					x: '7.5%',
-					y: '65%',
-					width: '88%',
-					height: '30%'
-				}, ],
-				xAxis: [{
-					show:false,
-					gridIndex: 0,
-					type: 'category',
-					axisTick: {
-						alignWithLabel: true
-					},
-					data: ['历史电量']
-				}, ],
-				yAxis: [{
-					gridIndex: 0,
-//					name: '学科',
-					show: false
-				}, ],
-				series: [{
-						name: '历史电量',
-						type: 'pie',
-						//roseType:'radius',
-						radius: '80%',
-						center: ['50%', '60%'],
-						legendHoverLink: false,
-						hoverAnimation: false,
-						clockwise: false,
-						data: [{
-								value:296,
-								name: '过去48小时'
-							},
-							{
-								value: 180,
-								name: '过去31天'
-							},
-							/*{value:335, name:'3'},
-							{value:1548, name:'4'},
-							{value:1548, name:'5'}*/
-						],
-						label: {
-							normal: {
-								position: 'inner',
-//								formatter: '{c}份',
-								textStyle: {
-									color: '#ffffff',
-									fontSize: 14
-								}
-							}
-						},
-					},
-				]
-			};
-
-			myChart.setOption(option);
+			//			var myChart = echarts.init(document.getElementById('main-1'));
+			//			option = {
+			//				tooltip: {
+			//					trigger: 'item',
+			//					formatter: "{a} {b} :{d}%",
+			//					textStyle: {
+			//						fontWeight: 'bold',
+			//						fontSize: 14
+			//					}
+			//				},
+			//				legend: {
+			//					orient: 'vertical',
+			//					left: 'left',
+			//					data: ['过去48小时', '过去31天']
+			//				},
+			//				toolbox: {
+			//					show: true,
+			//					orient: 'vertical',
+			//					left: 'right',
+			//					top: 'center',
+			//					feature: {
+			//						dataView: {
+			//							readOnly: false
+			//						},
+			//						restore: {},
+			//						//						saveAsImage: {}
+			//					}
+			//				},
+			//				grid: [{
+			//					x: '7.5%',
+			//					y: '65%',
+			//					width: '88%',
+			//					height: '30%'
+			//				}, ],
+			//				xAxis: [{
+			//					show: false,
+			//					gridIndex: 0,
+			//					type: 'category',
+			//					axisTick: {
+			//						alignWithLabel: true
+			//					},
+			//					data: ['历史电量']
+			//				}, ],
+			//				yAxis: [{
+			//					gridIndex: 0,
+			//					//					name: '学科',
+			//					show: false
+			//				}, ],
+			//				series: [{
+			//					name: '历史电量',
+			//					type: 'pie',
+			//					//roseType:'radius',
+			//					radius: '80%',
+			//					center: ['50%', '60%'],
+			//					legendHoverLink: false,
+			//					hoverAnimation: false,
+			//					clockwise: false,
+			//					data: [{
+			//							value: 296,
+			//							name: '过去48小时'
+			//						},
+			//						{
+			//							value: 180,
+			//							name: '过去31天'
+			//						},
+			//						/*{value:335, name:'3'},
+			//						{value:1548, name:'4'},
+			//						{value:1548, name:'5'}*/
+			//					],
+			//					label: {
+			//						normal: {
+			//							position: 'inner',
+			//							//								formatter: '{c}份',
+			//							textStyle: {
+			//								color: '#ffffff',
+			//								fontSize: 14
+			//							}
+			//						}
+			//					},
+			//				}, ]
+			//			};
+			//
+			//			myChart.setOption(option);
 
 			var myChart = echarts.init(document.getElementById('main-2'));
 			option = {
